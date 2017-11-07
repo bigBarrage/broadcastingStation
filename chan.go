@@ -1,7 +1,8 @@
 package main
 
-var messageChannel chan string
+var messageChannel chan []byte
 
 func init() {
-	messageChannel = make(chan string, 1024)
+	messageChannel = make(chan []byte, 1024)
+	go sendMessage()
 }

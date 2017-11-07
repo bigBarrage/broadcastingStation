@@ -1,6 +1,6 @@
 package main
 
-import "golang.org/x/net/websocket"
+import "github.com/gorilla/websocket"
 
 type Node struct {
 	IsAlive bool            //节点是否存活
@@ -11,6 +11,6 @@ func (this *Node) InStation() {
 	Station = append(Station, this)
 }
 
-func (this *Node) SendMessage(msg string) {
+func (this *Node) PublishMessage(msg []byte) {
 	messageChannel <- msg
 }
